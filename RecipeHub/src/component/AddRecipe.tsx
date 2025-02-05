@@ -5,21 +5,18 @@ import { Box, Button, Modal, TextField, Container, Typography } from "@mui/mater
 import RecipesStore, { RecipeType } from "./recipeSlice";
 import { UserContext } from "./userContext";
 import { useContext, useState } from "react";
-
 const schema = yup.object().shape({
     title: yup.string().required("Title is required"),
     description: yup.string().required("Description is required"),
     ingredients: yup.string().required("Ingredients are required"),
     instructions: yup.string().required("Instructions are required"),
 });
-
 const AddRecipe = () => {
     const [isOpen, setIsOpen] = useState(true);
     const context = useContext(UserContext);
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(schema),
     });
-
     const onSubmit = (data: any) => {
         const newRecipe: RecipeType = {
             title: data.title,
@@ -35,7 +32,6 @@ const AddRecipe = () => {
             setIsOpen(false);
         }
     };
-
     return (
         <Modal open={isOpen} onClose={() => setIsOpen(false)}>
             <Container maxWidth="sm" sx={{ bgcolor: "background.paper", p: 3, borderRadius: 2, boxShadow: 24 }}>
@@ -66,13 +62,27 @@ const AddRecipe = () => {
                         error={!!errors.instructions}
                         helperText={errors.instructions?.message}
                     />
-                    <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
-                        Add Recipe
-                    </Button>
+                  <Button 
+    type="submit" 
+    variant="contained" 
+    sx={{ 
+        mt: 2, 
+        backgroundColor: '#FF6347', 
+        color: '#fff', 
+        fontSize: '1.2rem', 
+        fontWeight: 'bold',
+        padding: '10px 20px',
+        borderRadius: '12px', 
+        '&:hover': { 
+            backgroundColor: '#FF4500', 
+        },
+    }}
+>
+    Add Recipe
+</Button>
                 </form>
             </Container>
         </Modal>
     );
 };
-
 export default AddRecipe;

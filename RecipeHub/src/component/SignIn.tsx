@@ -48,8 +48,8 @@ const SignIn: React.FC<SignInProps> = ({ open, onClose, onSuccess }) => {
             password: passwordRef.current?.value || "",
           },
         });
-        onSuccess(); // קריאה לפונקציה שמופעלת לאחר הרשמה מוצלחת
-        onClose(); // סגירת המודל
+        onSuccess(); 
+        onClose(); 
       }
     } catch (e: any) {
       if (e.response?.status === 400) {
@@ -73,7 +73,7 @@ const SignIn: React.FC<SignInProps> = ({ open, onClose, onSuccess }) => {
           onClick={handleSubmit} 
           variant="contained" 
           fullWidth 
-          sx={{ background: "black", color: "white", borderRadius: "10px" }}
+          sx={{ background: "pink", color: "white", borderRadius: "10px" }}
         >
           Register
         </Button>

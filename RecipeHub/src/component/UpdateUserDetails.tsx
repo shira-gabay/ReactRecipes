@@ -76,7 +76,7 @@ const Update = ({ setUpdate }: { setUpdate: Function }) => {
           <TextField label='phone' inputRef={phonRef} />
 
           <Button type="submit" variant="contained" sx={{
-            background: 'black',
+            background: 'pink',
             color: 'white',
             borderRadius: '10px',
             border: '2px solid white', mt: 2

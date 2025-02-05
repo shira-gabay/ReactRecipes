@@ -26,14 +26,14 @@ const Username_avatar = () => {
     return null;
   return (<>
     <Box sx={style}>
-      <Typography sx={{ fontWeight: "bold", color: "#333", marginBottom: 1, }}
+      <Typography sx={{ fontWeight: "bold", color: "#222", marginBottom: 1, }}
       >Hello {context.user.name}</Typography>
       <Avatar sx={{ bgcolor: pink[600], width: 56, height: 56, fontSize: 24, fontWeight: "bold", }}
       >{context.user.name[0]}</Avatar>
 
       <Button color="primary" variant="contained"
         sx={{
-          background: 'black',
+          background: 'pink',
           color: 'white',
           borderRadius: '10px',
           border: '2px solid white', mt: 2

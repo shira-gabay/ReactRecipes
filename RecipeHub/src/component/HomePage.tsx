@@ -23,15 +23,48 @@ const HomePage = () => {
   return (
     <>
       {!isLogin && (
-        <Box sx={{ position: "absolute", top: 10, left: 10, display: "flex", gap: 2 }}>
-          <Button variant="contained" color="error" onClick={() => setSignUpOpen(true)}>
-            Sign
-          </Button>
-
-          <Button variant="contained" color="error" onClick={() => setIsLoginOpen(true)}>
-            Login
-          </Button>
-        </Box>
+     <Box sx={{ 
+      position: "absolute", 
+      top: 10, 
+      left: 10, 
+      display: "flex", 
+      gap: 2 
+  }}>
+      <Button 
+          variant="contained" 
+          sx={{ 
+              backgroundColor: '#4CAF50', 
+              color: '#fff',
+              fontSize: '1rem', 
+              fontWeight: '500', 
+              padding: '10px 15px',
+              borderRadius: '8px', 
+              '&:hover': { 
+                  backgroundColor: '#388E3C', 
+              },
+          }} 
+          onClick={() => setSignUpOpen(true)}>
+          Sign
+      </Button>
+  
+      <Button 
+          variant="contained" 
+          sx={{ 
+              backgroundColor: '#2196F3', 
+              color: '#fff', 
+              fontSize: '1rem',
+              fontWeight: '500', 
+              padding: '10px 15px', 
+              borderRadius: '8px', 
+              '&:hover': { 
+                  backgroundColor: '#1976D2', 
+              },
+          }} 
+          onClick={() => setIsLoginOpen(true)}>
+          Login
+      </Button>
+  </Box>
+  
       )}
 
       <Login open={isLoginOpen} setOpen={setIsLoginOpen} onSuccess={handleLoginSuccess} />
