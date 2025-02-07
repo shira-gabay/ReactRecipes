@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import { Outlet } from "react-router";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import HomePage from "./HomePage";
 import { UserContext } from "./userContext";
 import { User, userReducer } from "./user";

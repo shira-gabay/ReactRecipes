@@ -6,7 +6,7 @@ import Update from "./UpdateUserDetails";
 
 const style = {
   position: "absolute",
-  top: "5%",
+  top:"10px",
   left: "5%",
   display: "flex",
   flexDirection: "column",
@@ -14,7 +14,6 @@ const style = {
   gap: 2,
   padding: 2,
   width: 250,
-  bgcolor: 'background.paper',
   borderRadius: 2,
 }
 const Username_avatar = () => {
@@ -25,20 +24,21 @@ const Username_avatar = () => {
   if (!context)
     return null;
   return (<>
-    <Box sx={style}>
-      <Typography sx={{ fontWeight: "bold", color: "#222", marginBottom: 1, }}
-      >Hello {context.user.name}</Typography>
-      <Avatar sx={{ bgcolor: pink[600], width: 56, height: 56, fontSize: 24, fontWeight: "bold", }}
-      >{context.user.name[0]}</Avatar>
-
-      <Button color="primary" variant="contained"
+  <Button color="primary" variant="contained"
         sx={{
+          top:"10px",
+          left:"20px",
           background: 'pink',
           color: 'white',
           borderRadius: '10px',
           border: '2px solid white', mt: 2
         }} onClick={() => setOpen(true)}>update your details</Button>
-    </Box>
+    <Box sx={style}>
+      <Typography sx={{ fontWeight: "bold", color: "#222" }}
+      >Hello {context.user.name}</Typography>
+      <Avatar sx={{ bgcolor: pink[600], width: 56, height: 56, fontSize: 24, fontWeight: "bold", }}
+      >{context.user.name[0]}</Avatar>
+ </Box>
     <Modal open={open} onClose={() => setOpen(false)} aria-labelledby="update-form-modal">
       <Box sx={{
         position: "absolute",

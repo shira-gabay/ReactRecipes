@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite"
-import RecipesStore from "./recipeSlice"
+import RecipesStore from "./recipeStore"
 import { useParams } from "react-router-dom";
 
-const Recipe = observer(() => {
+const RecipeList = observer(() => {
     const { id } = useParams();
     if (!id) {
         return <div>recipe not found</div>;
@@ -21,5 +21,5 @@ const Recipe = observer(() => {
     </>)
 })
 
-export default Recipe;
+export default RecipeList;
 

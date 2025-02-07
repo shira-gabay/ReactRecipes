@@ -1,4 +1,4 @@
-import React, { useRef, FormEvent } from "react";
+import { useRef, FormEvent } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { UserContext } from "./userContext";
@@ -43,7 +43,6 @@ const Login = ({ open, setOpen, onSuccess }: { open: boolean; setOpen: (value: b
         alert("Logged in successfully");
       }
     } catch (e: any) {
-      console.error("❌ Full error:", e);
       if (e.response?.status === 401) {
         alert("User not found");
       } else {

@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Box, Button } from "@mui/material";
 import Login from "./Login";
-import { UserContext } from "./userContext";
 import Username_avatar from "./UserNameAndAvatar";
 import SignIn from "./SignIn";
 
 const HomePage = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isSignUpOpen, setSignUpOpen] = useState(false); // הוספת משתנה חדש
+  const [isSignUpOpen, setSignUpOpen] = useState(false); 
 
   const handleLoginSuccess = () => {
     setIsLogin(true);
@@ -16,7 +15,7 @@ const HomePage = () => {
   };
 
   const handleSignUpSuccess = () => {
-    setIsLogin(true); // אם אתה רוצה שהמשתמש ייכנס אוטומטית אחרי הרשמה
+    setIsLogin(true); 
     setSignUpOpen(false);
   };
 

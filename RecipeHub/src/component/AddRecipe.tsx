@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Box, Button, Modal, TextField, Container, Typography } from "@mui/material";
-import RecipesStore, { RecipeType } from "./recipeSlice";
+import {Button, Modal, TextField, Container, Typography } from "@mui/material";
+import RecipesStore, { RecipeType } from "./recipeStore";
 import { UserContext } from "./userContext";
 import { useContext, useState } from "react";
 const schema = yup.object().shape({
